@@ -33,7 +33,7 @@
               <input ngModel #email="ngModel" name="email" type="text" class="form-control mb-3" placeholder="email"
                 email required>
             </div>
-            <input type="submit" [disabled]="confirmpassword.value != password.value" class="btn btn-primary btn-block">
+            <input type="submit" [disabled]="fr.invalid || password.value != confirmpassword.value" class="btn btn-primary btn-block">
           </form>
         </div>
       </div>
