@@ -1,0 +1,29 @@
+<div class="container">
+<div class="row d-flex flex-column align-items-center mt-3">
+  <span class="h4">Assignment</span>
+ <span class="h2">One Account. All of Assignment</span>
+ <span class="h5">Sign in to continue.</span>
+</div>
+<div class="row d-flex justify-content-center mt-3">
+    <div class="col-lg-4">
+        <div class="card card-form ">
+            <div class="card-header text-center d-flex flex-column">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+            </div>
+            <div class="card-body">
+                <form  #f="ngForm" (ngSubmit)="onFormSubmit(f)">
+                    <input ngModel 
+                    #email="ngModel" name="email" type="text" class="form-control mb-3" 
+                    placeholder="email" email required>
+                    <input ngModel #password="ngModel" 
+                    name="password" type="password" class="form-control mb-3" 
+                    placeholder="Password" required>
+                    <input type="submit" [disabled]="!f.valid"  class="btn btn-primary btn-block">
+                </form>
+            </div>
+            <div class="card-footer"><a routerLink="/register">Are you a new user ?</a></div>
+        </div>
+    </div>
+</div>
+
+</div>

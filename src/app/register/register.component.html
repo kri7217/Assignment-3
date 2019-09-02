@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row d-flex flex-column align-items-center mt-3">
+    <span class="h2">Create your Account</span>
+  </div>
+  <div class="row d-flex justify-content-center mt-3">
+    <div class="col-lg-4">
+      <div class="card card-form ">
+        <div class="card-body">
+          <form #fr="ngForm" (ngSubmit)="onFormSubmit(fr)">
+            <div class="d-flex">
+              <input ngModel #fname="ngModel" name="fname" type="text" class="form-control mb-3 mr-2"
+                placeholder="First Name" required>
+              <input ngModel #lname="ngModel" name="lname" type="text" class="form-control mb-3" placeholder="Last Name"
+                required>
+            </div>
+            <div class="form-group">
+              <label for="password">Create a password</label>
+              <input ngModel #password="ngModel" name="password" type="password" class="form-control mb-3"
+                placeholder="Password" required>
+            </div>
+            <div class="form-group">
+              <label for="confirmpassword">Confirm password</label>
+              <input ngModel #confirmpassword="ngModel" name="confirmpassword" type="password" class="form-control mb-3"
+                placeholder="confirm Password" required>
+            </div>
+            <div class="form-group">
+              <label>Date of Birth</label>
+              <input type="date" ngModel #dob="ngModel" name="dob" class="form-control" id="date_input"
+                placeholder="Date of Birth" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Choose your mail ID</label>
+              <input ngModel #email="ngModel" name="email" type="text" class="form-control mb-3" placeholder="email"
+                email required>
+            </div>
+            <input type="submit" [disabled]="confirmpassword.value != password.value" class="btn btn-primary btn-block">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
